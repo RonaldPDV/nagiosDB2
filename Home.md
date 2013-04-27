@@ -1,0 +1,1 @@
+Welcome to the monitor-db2-with-nagios wiki!
