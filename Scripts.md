@@ -304,10 +304,12 @@ It is important to define the thresholds. Otherwise, it will automatically throw
     |'LNS_Gap'=0%
     'Page_cleaner_threshold'=0%
 
+![Check_io_cleaners PBPCT](https://angoca.github.io/monitor-db2-with-nagios/check_io_cleaners-pbpct.png)
+
 -> Ratio of writes
 
     Quantity of asynchronous writes is bad and it is impacting the performance|'Async_data_writes'=100%;95;90;0;100 'Async_index_writes'=0%;95;90;0;100
     |
 
-![Check_io_cleaners](https://angoca.github.io/monitor-db2-with-nagios/check_io_cleaners.png)
+![Check_io_cleaners Ratio](https://angoca.github.io/monitor-db2-with-nagios/check_io_cleaners-ratio.png)
 
