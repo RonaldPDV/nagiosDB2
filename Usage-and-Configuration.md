@@ -25,6 +25,6 @@ One you have the home directory
 If something is wrong, you will get the error message
 
     ./check_instance_up
-    Usage: check_instance_up { -i instanceHomeDirectory # -h # -V } [ -v ]
+    Usage: check_instance_up { -i instanceHomeDirectory | -h | -V } [ -v ]
     Note: The test was not executed.|
     |
