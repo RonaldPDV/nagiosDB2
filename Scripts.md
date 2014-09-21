@@ -159,9 +159,9 @@ This is the way to call the script:
 The output shows the quantity of messages in the db2diag.log file:
 
     OK, quantity is normal (0) since 2014-09-21-09.31.08.|'logs'=0;20;40
-Messages by levels. Severe: 0, Critical: 0, Error: 0, Warning: 0, Info: 0, Event: 0|'Severe'=0 'Critical'=0 'Error'=0 'Warning'=0 'Info'=0 'Event'=0
+    Messages by levels. Severe: 0, Critical: 0, Error: 0, Warning: 0, Info: 0, Event: 0|'Severe'=0 'Critical'=0 'Error'=0 'Warning'=0 'Info'=0 'Event'=0
 
-![check_db2diag](https://angoca.github.io/monitor-db2-with-nagios/check_db2diag.png)
+![Check_db2diag](https://angoca.github.io/monitor-db2-with-nagios/check_db2diag.png)
 
 ## Extra
 
