@@ -18,9 +18,9 @@ This set of script was born as an extension ad improve to a set of scripts hoste
 
 The lack of architecture could be an issue. But the initial aim was to provide a simple set of scripts to monitor DB2.
 
-The similarity of the scripts is guided by a template that already has the basic structure for all scripts. This template has a specific space for the specific part to be monitored, with many validation done before. You will see that all scripts are based on the template.
+The similarity of the scripts is guided by a template that already has the basic structure for all scripts. This template has a specific space for the specific part to be monitored, with many validations done before. You will see that all scripts are based on the template.
 
-We are currently thinking to create a new project / branch to have an architecture. It will be very different from this project, because the scripts will share code, but it will reduce the impact of connection per script, with an asynchronous check.
+We are currently thinking to create a new project / branch to have an architecture. It will be very different from this project, because the scripts will share code, but it will reduce the impact of connection per script, with an asynchronous check. It could probably use jNRPE, and the aim is to keep an active connection to the database, in order to reduce the connection establishment for each check.
 
 # Extensibility
 
