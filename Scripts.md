@@ -104,9 +104,13 @@ Be careful when using with a standby database in an HADR environment. The values
 
 The user that executes this script needs some special permission in the tables associated with storage management.
 
+For example, if the user that executes the script is nagios, you should execute this.
+
     db2 grant execute on procedure sysproc.GET_DBSIZE_INFO to user nagios
     db2 grant execute on package NULLID.SYSSH200 to user nagios
     db2 grant select,update on table SYSTOOLS.STMG_DBSIZE_INFO to user nagios
+
+You can also be executing the commands from `root`, in the case you are using Check_MK.
 
 It could also possible to require a rebind in some packages. For that, you can do this:
 
