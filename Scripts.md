@@ -19,11 +19,11 @@ The user that executes this script should have an authority at instance level (h
 
 There are two ways to call this script:
 
-> Group by status
+- Group by status
 
     ./check_connection_qty -i /home/db2inst1/ -d sample -s
 
-> Group by user
+- Group by user
 
     ./check_connection_qty -i /home/db2inst1/ -d sample
 
