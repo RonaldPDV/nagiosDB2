@@ -59,3 +59,32 @@ There are two ways to call this script:
 
  * This script is ready to use with Check_MK. Option `-K`. The output is different.
  * If the script does not work, or the output is not correct, try to run it with the `-vvv` option, and then check the messages.
+
+# check_connection_qty
+
+## Purpose
+
+This script checks the connectivity to a database.
+
+## Requirements
+
+It requires the connection authority to the database. Otherwise an error is raised.
+
+## Usage
+
+This is the way to call the script:
+
+    ./check_database_connection -i /home/db2inst1/ -d sample 
+
+## Output
+
+The output shows the status of the connection:
+
+    OK Connection to database wfscpd. The database is active. |'Connectable_Database'=0.9;0.6;0.3
+The database is active. |'Database_Active'=0.8;0.5 
+
+The values 0.9 and 0.8 are indicative, there are just to draw a line in the graph.
+
+![check_database_connection](https://angoca.github.io/monitor-db2-with-nagios/check_database_connection.png)
+
+The graph show some perturbations in the blue line. It means that there were unavailability during that time.
