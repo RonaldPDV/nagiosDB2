@@ -129,7 +129,7 @@ This is the way to call the script:
 The output shows the status of the database:
 
     OK. Size is 17630625792B allocated in 38769844224B|'Database_size'=17630625792B
-|'Database_allocation'=38769844224B 
+    |'Database_allocation'=38769844224B 
 
 ![Check_database_size](https://angoca.github.io/monitor-db2-with-nagios/check_database_size.png)
 
