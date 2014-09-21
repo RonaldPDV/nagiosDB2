@@ -100,7 +100,6 @@ This script checks the database size. Retrieves a critical alarm when the size i
 
 Be careful when using with a standby database in an HADR environment. The values should be updated in the primary database. The standby should only retrieve these values. If the primary database does not update the values, the standby will generate errors.
 
-
 ## Requirements
 
 The user that executes this script needs some special permission in the tables associated with storage management.
@@ -127,14 +126,44 @@ This is the way to call the script:
 
 ## Output
 
-The output shows the status of the connection:
+The output shows the status of the database:
 
     OK Connection to database wfscpd. The database is active. |'Connectable_Database'=0.9;0.6;0.3
 The database is active. |'Database_Active'=0.8;0.5 
-
 
 ![Check_database_size](https://angoca.github.io/monitor-db2-with-nagios/check_database_size.png)
 
 ## Extra
 
  * This script never generates an alert. It is just for informative purposes, and have an evolution graph of the database size in Nagios. If something like Cacty is used, this kind of graph could be not used.
+
+
+# check_db2diag
+
+## Purpose
+
+Check the quantity of messages written in the db2diag.log file. It allows to detect an abnormal behaviour in the instance, because most of the time, when an recurrent error happens in the database/instance, it is described in the diagnostic file.
+
+## Requirements
+
+Access to the db2diag.log file.
+
+## Usage
+
+This is the way to call the script:
+
+    ./check_db2diag -i /home/db2inst1/ 
+
+## Output
+
+The output shows the quantity of messages in the db2diag.log file:
+
+    OK, quantity is normal (0) since 2014-09-21-09.31.08.|'logs'=0;20;40
+Messages by levels. Severe: 0, Critical: 0, Error: 0, Warning: 0, Info: 0, Event: 0|'Severe'=0 'Critical'=0 'Error'=0 'Warning'=0 'Info'=0 'Event'=0
+
+![check_db2diag](https://angoca.github.io/monitor-db2-with-nagios/check_db2diag.png)
+
+## Extra
+
+ * The quantity of messages (blank lines) and lines can be retrieved. This could give you an idea of how big is the file.
+
