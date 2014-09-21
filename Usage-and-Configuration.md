@@ -2,7 +2,7 @@ Most of the scripts need the instance directory where they are going to be execu
 
 Let's suppose we are going to use `check_instance_up`. You will need to pass the directory instance with the parameter `-i`. The directory instance is the home directory of the user that executes the instance.
 
-You can get the instances of a server by runnig `db2greg -dump`
+You can get the instances of a server by running `db2greg -dump`
 
     /opt/ibm/db2/V9.7/bin/db2greg -dump
 
