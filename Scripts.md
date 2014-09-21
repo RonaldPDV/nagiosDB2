@@ -261,3 +261,53 @@ The output shows the quantity of messages in the db2diag.log file:
 ![Check_instance_up](https://angoca.github.io/monitor-db2-with-nagios/check_instance_up.png)
 
 As we can see in the graph, there are some periods where the instance was down.
+
+
+# check_io_cleaners
+
+## Purpose
+
+Checks the performance of the IO cleaners (Page cleaners) by calculating the percentage between Sync and Async writes, and the percentage between the page cleaner triggers (LSN Gap cleaner trigger, dirty page steal clean trigger and Dirty page threshold cleaner.
+
+These formulas were taken from different sites:
+
+ * http://books.google.fr/books?id=KdBLn-LQ0n4C&pg=PA110&lpg=PA110&dq=pbpct+percentage+of+bad+page+cleaner+trigger&source=bl&ots=WZNE0msIaO&sig=6Kk4VWXK0Yw1EusO82U8w4FhTGs&hl=en&sa=X&ei=F-cbVMbuLMXnOf_ygbAO&ved=0CCMQ6AEwAA#v=onepage&q=pbpct%20percentage%20of%20bad%20page%20cleaner%20trigger&f=false
+ * http://www.ebenner.com/db2dba_blog/
+ * http://www.dbisoftware.com/blog/db2_performance.php?id=117
+
+There are two ways to call this scripts:
+
+ * Percentage of Bad Page Clean Trigger
+ * Ratio between Async writes and total writes.
+
+## Requirements
+
+TODO
+
+## Usage
+
+-> Calculate PBPCT:
+
+    ./check_io_cleaners -i /home/db2inst1/ -d sample
+
+-> Shows the ratio
+
+    ./check_io_cleaners -i /home/db2inst1/ -d sample -a -c 90 -w 95
+
+It is important to define the thresholds. Otherwise, it will automatically throws an error.
+
+## Output
+
+-> PBPCT output:
+
+    Percentage of Bad Page cleaner trigger is OK|'PBPCT'=0%;20;40;0;100
+    |'LNS_Gap'=0%
+    'Page_cleaner_threshold'=0%
+
+-> Ratio of writes
+
+    Quantity of asynchronous writes is bad and it is impacting the performance|'Async_data_writes'=100%;95;90;0;100 'Async_index_writes'=0%;95;90;0;100
+    |
+
+![Check_io_cleaners](https://angoca.github.io/monitor-db2-with-nagios/check_io_cleaners.png)
+
