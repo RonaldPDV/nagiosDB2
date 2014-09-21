@@ -313,3 +313,32 @@ It is important to define the thresholds. Otherwise, it will automatically throw
 
 ![Check_io_cleaners Ratio](https://angoca.github.io/monitor-db2-with-nagios/check_io_cleaners-ratio.png)
 
+
+# check_last_backup
+
+## Purpose
+
+This scripts checks the elderly of the last backup. It throws alerts if the last backups are too old.
+
+The execute could take a long time, so it is recommended to configure this script adequately.
+
+## Requirements
+
+TODO
+
+## Usage
+
+The way to call this script.
+
+    ./check_last_backup -i /home/db2inst1/ -d sample -c 240:140:50 -w 168:96:25 -K
+
+The thresholds are defined as triplets, for the full, incremental and delta backup.
+
+## Output
+
+This generates the following output:
+
+    OK Full. OK Incremental. OK Delta.|'Full_backup'=14;168;240
+    |
+
+![Check_last_backup](https://angoca.github.io/monitor-db2-with-nagios/check_last_backup.png)
