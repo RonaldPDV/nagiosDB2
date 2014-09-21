@@ -203,3 +203,34 @@ If HADR is not configured:
 
 TODO image
 
+
+# check_instance_memory
+
+## Purpose
+
+Checks the memory usage by an instance. It does not take into account the bufferpools, or other memory dumps, it just takes the result of the query. The query is executed against the first connectable database of an instance.
+
+## Requirements
+
+The user used to execute the script should have a special privileges in at least one of the database of the instance analyzed; the privilege are:
+
+  db2 grant execute on package NULLID.SQLC2H21 to user nagios
+  db2 grant execute on specific function SYSPROC.ADMIN_GET_DBP_MEM_USAGE to user nagios
+  db2 grant execute on specific function SYSPROC.ADMIN_GET_DBP_MEM_USAGE_AP to user nagios
+  db2 db2 grant usage on workload SYSDEFAULTUSERWORKLOAD to user nagios
+
+## Usage
+
+This is the way to call the script:
+
+    ./check_instance_memory -i /home/db2inst1/
+
+## Output
+
+The output shows the quantity of messages in the db2diag.log file:
+
+    OK, memory usage is automatically.| 'Current_memory_at_node_0'=999MB
+ At node 0 the max usage memory is 744MB and the current usage memory 999MB.| 'Max_memory_at_node_0'=744MB
+
+![Check_instance_memory](https://angoca.github.io/monitor-db2-with-nagios/check_instance_memory.png)
+
