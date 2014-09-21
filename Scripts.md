@@ -259,3 +259,5 @@ The output shows the quantity of messages in the db2diag.log file:
     There are 1 active databases|'Active_Databases'=1
 
 ![Check_instance_up](https://angoca.github.io/monitor-db2-with-nagios/check_instance_up.png)
+
+As we can see in the graph, there are some periods where the instance was down.
