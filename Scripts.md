@@ -23,13 +23,9 @@ There are two ways to call this script:
 
     ./check_connection_qty -i /home/db2inst1/ -d sample -s
 
-![Check_connections_qty per status](https://angoca.github.io/monitor-db2-with-nagios/check_connection_qty_status.png)
-
 -> Group by user
 
     ./check_connection_qty -i /home/db2inst1/ -d sample
-
-![Check_connections_qty per user](https://angoca.github.io/monitor-db2-with-nagios/check_connection_qty_users.png)
 
 ## Output
 
@@ -52,12 +48,16 @@ List of status
     'Recompiling'=0
     'Other'=0
 
+![Check_connections_qty per status](https://angoca.github.io/monitor-db2-with-nagios/check_connection_qty_status.png)
+
  * Group by user
 
 Connections per user.
 
     OK. Normal quantity of connections (6).|'Connections'=6;10;15
     DB2INST1 has 6,|'User_DB2INST1'=6
+
+![Check_connections_qty per user](https://angoca.github.io/monitor-db2-with-nagios/check_connection_qty_users.png)
 
 ## Extra
 
