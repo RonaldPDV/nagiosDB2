@@ -59,6 +59,7 @@ There are two ways to call this script:
 
  * This script is ready to use with Check_MK. Option `-K`. The output is different.
  * If the script does not work, or the output is not correct, try to run it with the `-vvv` option, and then check the messages.
+ * This script does not take into account subagents, just quantity of connections.
 
 
 # check_database_connection
