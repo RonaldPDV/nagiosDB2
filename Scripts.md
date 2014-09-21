@@ -31,6 +31,8 @@ There are two ways to call this script:
 
  * Group by status
 
+List of status
+
     OK. Normal quantity of connections (6).|'Connections'=6;10;15
     |'Connect_Completed'=6
     'UOW_Executing'=0
@@ -47,6 +49,8 @@ There are two ways to call this script:
     'Other'=0
 
  * Group by user
+
+Connections per user.
 
     OK. Normal quantity of connections (6).|'Connections'=6;10;15
     DB2INST1 has 6,|'User_DB2INST1'=6
