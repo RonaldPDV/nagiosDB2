@@ -60,7 +60,8 @@ There are two ways to call this script:
  * This script is ready to use with Check_MK. Option `-K`. The output is different.
  * If the script does not work, or the output is not correct, try to run it with the `-vvv` option, and then check the messages.
 
-# check_connection_qty
+
+# check_database_connection
 
 ## Purpose
 
@@ -68,7 +69,7 @@ This script checks the connectivity to a database.
 
 ## Requirements
 
-It requires the connection authority to the database. Otherwise an error is raised.
+It requires the connection authority to the database.
 
 ## Usage
 
@@ -88,3 +89,43 @@ The values 0.9 and 0.8 are indicative, there are just to draw a line in the grap
 ![check_database_connection](https://angoca.github.io/monitor-db2-with-nagios/check_database_connection.png)
 
 The graph show some perturbations in the blue line. It means that there were unavailability during that time.
+
+
+# check_database_size
+
+## Purpose
+
+This script checks the database size. Retrieves a critical alarm when the size is bigger than the given size in critical, or retrieves a warning alarm when the size percentage is bigger than the provided, comparing with the allocated size.
+
+Be careful when using with a standby database in an HADR environment. The values should be updated in the primary database. The standby should only retrieve these values.
+
+
+## Requirements
+
+The user that executes this script needs some special permission in the tables associated with storage management.
+
+    db2 grant execute on procedure sysproc.GET_DBSIZE_INFO to user nagios
+    db2 grant execute on package NULLID.SYSSH200 to user nagios
+    db2 grant select,update on table SYSTOOLS.STMG_DBSIZE_INFO to user nagios
+
+It could also possible to require a rebind in some packages. For that, you can do this:
+
+    db2rbind wfscpd -l /tmp/log.bnd
+
+## Usage
+
+This is the way to call the script:
+
+    ./check_database_size -i /home/db2inst1/ -d sample 
+
+## Output
+
+The output shows the status of the connection:
+
+    OK Connection to database wfscpd. The database is active. |'Connectable_Database'=0.9;0.6;0.3
+The database is active. |'Database_Active'=0.8;0.5 
+
+
+![Check_database_size](https://angoca.github.io/monitor-db2-with-nagios/check_database_size.png)
+
+
