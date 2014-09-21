@@ -97,7 +97,7 @@ The graph show some perturbations in the blue line. It means that there were una
 
 This script checks the database size. Retrieves a critical alarm when the size is bigger than the given size in critical, or retrieves a warning alarm when the size percentage is bigger than the provided, comparing with the allocated size.
 
-Be careful when using with a standby database in an HADR environment. The values should be updated in the primary database. The standby should only retrieve these values.
+Be careful when using with a standby database in an HADR environment. The values should be updated in the primary database. The standby should only retrieve these values. If the primary database does not update the values, the standby will generate errors.
 
 
 ## Requirements
