@@ -29,9 +29,7 @@ There are two ways to call this script:
 
 ## Output
 
- * Group by status
-
-List of status
+-> Group by status
 
     OK. Normal quantity of connections (6).|'Connections'=6;10;15
     |'Connect_Completed'=6
@@ -50,9 +48,7 @@ List of status
 
 ![Check_connections_qty per status](https://angoca.github.io/monitor-db2-with-nagios/check_connection_qty_status.png)
 
- * Group by user
-
-Connections per user.
+-> Group by user
 
     OK. Normal quantity of connections (6).|'Connections'=6;10;15
     DB2INST1 has 6,|'User_DB2INST1'=6
