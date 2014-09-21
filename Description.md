@@ -1,6 +1,6 @@
 # Open source
 
-The are many tools or programs in the market that allow you to monitor DB2. There are a few that are really good, and you can understand what is happening inside DB2, and then you can take the best decisions.
+There are many tools or programs in the market that allow you to monitor DB2. There are a few that are really good, and you can understand what is happening inside DB2, and then you can take the best decisions.
 
 However, these software is not free, and something the licenses are expensive. If you took the way to use DB2 Express-C, it is because your current plan is not to pay for the database software (probably you are testing a new feature, you have a small set of data, etc.), and in the same way you are not going to pay for the monitoring software for that database.
 
@@ -26,10 +26,10 @@ We are currently thinking to create a new project / branch to have an architectu
 
 You can modify any script to your own requirements, you just have to edit the file and that is all.
 
-You can also create you own scripts, based on template, just by copying the template.sh file. The benefict of writing a new script based on template, is that your script will be Nagios complaint.
+You can also create you own scripts, based on template, just by copying the template.sh file. The benefits of writing a new script based on template, is that your script will be Nagios complaint.
 
 # Support
 
 This is an open source project, and no support is provided. However, you can write an issue here, and we will try to help you.
 
-Also, if you create your own set of plugins or you corrected the existing ones, share them with us. The community will see the benefict of this collaboration.
+Also, if you create your own set of plugins or you corrected the existing ones, share them with us. The community will see the benefit of this collaboration.
