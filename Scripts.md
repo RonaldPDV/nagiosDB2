@@ -192,7 +192,7 @@ This is the way to call the script:
 
 ## Output
 
-The output shows the quantity of messages in the db2diag.log file:
+The output shows the status of the HADR and its synchronization:
 
     TODO output
 
@@ -214,10 +214,10 @@ Checks the memory usage by an instance. It does not take into account the buffer
 
 The user used to execute the script should have a special privileges in at least one of the database of the instance analyzed; the privilege are:
 
-  db2 grant execute on package NULLID.SQLC2H21 to user nagios
-  db2 grant execute on specific function SYSPROC.ADMIN_GET_DBP_MEM_USAGE to user nagios
-  db2 grant execute on specific function SYSPROC.ADMIN_GET_DBP_MEM_USAGE_AP to user nagios
-  db2 db2 grant usage on workload SYSDEFAULTUSERWORKLOAD to user nagios
+    db2 grant execute on package NULLID.SQLC2H21 to user nagios
+    db2 grant execute on specific function SYSPROC.ADMIN_GET_DBP_MEM_USAGE to user nagios
+    db2 grant execute on specific function SYSPROC.ADMIN_GET_DBP_MEM_USAGE_AP to user nagios
+    db2 db2 grant usage on workload SYSDEFAULTUSERWORKLOAD to user nagios
 
 ## Usage
 
@@ -227,10 +227,35 @@ This is the way to call the script:
 
 ## Output
 
-The output shows the quantity of messages in the db2diag.log file:
+The output shows the used memory:
 
     OK, memory usage is automatically.| 'Current_memory_at_node_0'=999MB
     At node 0 the max usage memory is 744MB and the current usage memory 999MB.| 'Max_memory_at_node_0'=744MB
 
 ![Check_instance_memory](https://angoca.github.io/monitor-db2-with-nagios/check_instance_memory.png)
 
+
+# check_instance_up
+
+## Purpose
+
+This script queries the status of the instance by retrieving the port number or service name from the configuration, and then querying netstat to check if there is an associated service with that port.
+
+## Requirements
+
+It is necessary to execute this script with a user with at least SYSMON authority, in order to retrieve all the necessary information. If not, the script will produce a critical alert indicating that the PID of the instance cannot be retrieved.
+
+## Usage
+
+This is the way to call the script:
+
+    ./check_instance_up -i /home/db2inst1/
+
+## Output
+
+The output shows the quantity of messages in the db2diag.log file:
+
+    Instance at /home/db2inst1/ is up (PID 21560).|'Started_Instance'=2;;0.4
+    There are 1 active databases|'Active_Databases'=1
+
+![Check_instance_up](https://angoca.github.io/monitor-db2-with-nagios/check_instance_up.png)
