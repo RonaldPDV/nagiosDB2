@@ -4,7 +4,7 @@
 
 This script checks the quantity of established connections on the database. The quantity can be filtered by a given criterion, and inverted if wanted.
 
-The connection state is based on the 'list application' output. However, it is unknown how all states are expressed. For this reason, unknown states are sent to a file in /tmp directory in order to catch the text. Please send us the content of that file in order to improve this script. Currently, those unknown states are listed as 'other'.
+The connection state is based on the `list application` output. However, it is unknown how all states are expressed. For this reason, unknown states are sent to a file in /tmp directory in order to catch the text. Please send us the content of that file in order to improve this script. Currently, those unknown states are listed as 'other'.
 
 ## Requirements
 
