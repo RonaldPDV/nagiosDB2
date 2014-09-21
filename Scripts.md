@@ -171,3 +171,4 @@ The output shows the quantity of messages in the db2diag.log file:
 ## Extra
 
  * The quantity of messages (blank lines) and lines can be retrieved. This could give you an idea of how big is the file.
+ * If you get a message like this `File permissions are wrong '/tmp/last_date_check_db2diag__home_db2inst1_'` in the output, then you should go to the /tmp directory and delete the file, or change its permissions (write to all).
