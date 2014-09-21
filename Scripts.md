@@ -112,6 +112,8 @@ For example, if the user that executes the script is nagios, you should execute 
 
 You can also be executing the commands from `root`, in the case you are using Check_MK.
 
+The user should be in the group of `SYSMON` authority.
+
 It could also possible to require a rebind in some packages. For that, you can do this:
 
     db2rbind wfscpd -l /tmp/log.bnd
