@@ -230,7 +230,7 @@ This is the way to call the script:
 The output shows the quantity of messages in the db2diag.log file:
 
     OK, memory usage is automatically.| 'Current_memory_at_node_0'=999MB
- At node 0 the max usage memory is 744MB and the current usage memory 999MB.| 'Max_memory_at_node_0'=744MB
+    At node 0 the max usage memory is 744MB and the current usage memory 999MB.| 'Max_memory_at_node_0'=744MB
 
 ![Check_instance_memory](https://angoca.github.io/monitor-db2-with-nagios/check_instance_memory.png)
 
