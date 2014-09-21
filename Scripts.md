@@ -82,7 +82,7 @@ This is the way to call the script:
 
 The output shows the status of the connection:
 
-    OK Connection to database wfscpd. The database is active. |'Connectable_Database'=0.9;0.6;0.3
+    OK Connection to database sample. The database is active. |'Connectable_Database'=0.9;0.6;0.3
 The database is active. |'Database_Active'=0.8;0.5 
 
 The values 0.9 and 0.8 are indicative, there are just to draw a line in the graph.
@@ -116,7 +116,7 @@ The user should be in the group of `SYSMON` authority.
 
 It could also possible to require a rebind in some packages. For that, you can do this:
 
-    db2rbind wfscpd -l /tmp/log.bnd
+    db2rbind sample -l /tmp/log.bnd
 
 ## Usage
 
@@ -128,8 +128,8 @@ This is the way to call the script:
 
 The output shows the status of the database:
 
-    OK Connection to database wfscpd. The database is active. |'Connectable_Database'=0.9;0.6;0.3
-The database is active. |'Database_Active'=0.8;0.5 
+    OK. Size is 17630625792B allocated in 38769844224B|'Database_size'=17630625792B
+|'Database_allocation'=38769844224B 
 
 ![Check_database_size](https://angoca.github.io/monitor-db2-with-nagios/check_database_size.png)
 
@@ -172,3 +172,34 @@ The output shows the quantity of messages in the db2diag.log file:
 
  * The quantity of messages (blank lines) and lines can be retrieved. This could give you an idea of how big is the file.
  * If you get a message like this `File permissions are wrong '/tmp/last_date_check_db2diag__home_db2inst1_'` in the output, then you should go to the /tmp directory and delete the file, or change its permissions (write to all).
+
+
+# check_hadr_status
+
+## Purpose
+
+Checks the HADR status by looking if both databases are connected. This script shows the difference in replication between the two machines.
+
+## Requirements
+
+At least SYSMON authority.
+
+## Usage
+
+This is the way to call the script:
+
+    ./check_hadr_status -i /home/db2inst1/ -d sample
+
+## Output
+
+The output shows the quantity of messages in the db2diag.log file:
+
+    TODO output
+
+If HADR is not configured:
+
+    Database is not in HADR|
+    |
+
+TODO image
+
