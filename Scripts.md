@@ -128,4 +128,6 @@ The database is active. |'Database_Active'=0.8;0.5
 
 ![Check_database_size](https://angoca.github.io/monitor-db2-with-nagios/check_database_size.png)
 
+## Extra
 
+ * This script never generates an alert. It is just for informative purposes, and have an evolution graph of the database size in Nagios. If something like Cacty is used, this kind of graph could be not used.
