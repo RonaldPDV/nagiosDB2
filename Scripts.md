@@ -91,6 +91,10 @@ The values 0.9 and 0.8 are indicative, there are just to draw a line in the grap
 
 The graph show some perturbations in the blue line. It means that there were unavailability during that time.
 
+## Extra
+
+ * This script is ready to use with Check_MK. Option `-K`. The output is different.
+
 
 # check_database_size
 
@@ -136,6 +140,7 @@ The output shows the status of the database:
 ## Extra
 
  * This script never generates an alert. It is just for informative purposes, and have an evolution graph of the database size in Nagios. If something like Cacty is used, this kind of graph could be not used.
+ * This script is ready to use with Check_MK. Option `-K`. The output is different.
 
 
 # check_db2diag
@@ -172,6 +177,7 @@ The output shows the quantity of messages in the db2diag.log file:
 
  * The quantity of messages (blank lines) and lines can be retrieved. This could give you an idea of how big is the file.
  * If you get a message like this `File permissions are wrong '/tmp/last_date_check_db2diag__home_db2inst1_'` in the output, then you should go to the /tmp directory and delete the file, or change its permissions (write to all).
+ * This script is ready to use with Check_MK. Option `-K`. The output is different.
 
 
 # check_hadr_status
@@ -202,6 +208,10 @@ If HADR is not configured:
     |
 
 TODO image
+
+## Extra
+
+ * This script is ready to use with Check_MK. Option `-K`. The output is different.
 
 
 # check_instance_memory
@@ -234,6 +244,10 @@ The output shows the used memory:
 
 ![Check_instance_memory](https://angoca.github.io/monitor-db2-with-nagios/check_instance_memory.png)
 
+## Extra
+
+ * This script is ready to use with Check_MK. Option `-K`. The output is different.
+
 
 # check_instance_up
 
@@ -261,6 +275,10 @@ The output shows the quantity of messages in the db2diag.log file:
 ![Check_instance_up](https://angoca.github.io/monitor-db2-with-nagios/check_instance_up.png)
 
 As we can see in the graph, there are some periods where the instance was down.
+
+## Extra
+
+ * This script is ready to use with Check_MK. Option `-K`. The output is different.
 
 
 # check_io_cleaners
@@ -313,6 +331,10 @@ It is important to define the thresholds. Otherwise, it will automatically throw
 
 ![Check_io_cleaners Ratio](https://angoca.github.io/monitor-db2-with-nagios/check_io_cleaners-ratio.png)
 
+## Extra
+
+ * This script is ready to use with Check_MK. Option `-K`. The output is different.
+
 
 # check_last_backup
 
@@ -330,7 +352,7 @@ TODO
 
 The way to call this script.
 
-    ./check_last_backup -i /home/db2inst1/ -d sample -c 240:140:50 -w 168:96:25 -K
+    ./check_last_backup -i /home/db2inst1/ -d sample -c 240:140:50 -w 168:96:25
 
 The thresholds are defined as triplets, for the full, incremental and delta backup.
 
@@ -342,3 +364,40 @@ This generates the following output:
     |
 
 ![Check_last_backup](https://angoca.github.io/monitor-db2-with-nagios/check_last_backup.png)
+
+## Extra
+
+ * This script is ready to use with Check_MK. Option `-K`. The output is different.
+
+
+# check_open_files
+
+## Purpose
+
+Checks the quantity of open files by a given instance.
+
+## Requirements
+
+This file execute the command lsof as root with the sudo command. In this case you need to give the necessary right to execute this command as root. Normally, you can do that just by adding a line in the sudoers file. The best is to edit this file with the command: 'visudo'
+
+## Usage
+
+The way to call this script.
+
+    ./check_open_files -i /home/db2inst1/
+
+The thresholds are defined as triplets, for the full, incremental and delta backup.
+
+## Output
+
+This generates the following output:
+
+    OK. List of open files for instance db2inst1 is 361|'Open_files'=361;;;;1024
+    |'Hard_limit'=4096
+
+![Check_open_files](https://angoca.github.io/monitor-db2-with-nagios/check_open_files.png)
+
+## Extra
+
+ * This script is ready to use with Check_MK. Option `-K`. The output is different.
+
