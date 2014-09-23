@@ -386,8 +386,6 @@ The way to call this script.
 
     ./check_open_files -i /home/db2inst1/
 
-The thresholds are defined as triplets, for the full, incremental and delta backup.
-
 ## Output
 
 This generates the following output:
@@ -401,3 +399,32 @@ This generates the following output:
 
  * This script is ready to use with Check_MK. Option `-K`. The output is different.
 
+
+# check_utilities
+
+## Purpose
+
+Checks the utilities that are currently running in the instance.  Throws a warning if a restore or backup is being performed.
+
+## Requirements
+
+TODO
+
+## Usage
+
+The way to call this script.
+
+    ./check_utilities -i /home/db2inst1/
+
+## Output
+
+This generates the following output:
+
+    Quantity of utilities is normal: 0.|Utilities=0;5;10
+    |Restore=0 Backup=0 Runstats=0 Reorgs=0 Others=0 
+
+![Check_utilities](https://angoca.github.io/monitor-db2-with-nagios/check_utilities.png)
+
+## Extra
+
+ * This script is ready to use with Check_MK. Option `-K`. The output is different.
