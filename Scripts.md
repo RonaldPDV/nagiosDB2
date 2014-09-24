@@ -370,6 +370,53 @@ This generates the following output:
  * This script is ready to use with Check_MK. Option `-K`. The output is different.
 
 
+# check_log_usage
+
+## Purpose
+
+This script checks the log usage to prevent log full conditions when there are long transactions.
+
+## Requirements
+
+This script needs:
+
+ * Access to the directory of the logs.
+ * Authorization on the SYSIBMADM.LOG_UTILIZATION administrative view.
+
+## Usage
+
+There are two ways to call this script:
+
+-> To calculate the quantity of bytes used:
+
+    ./check_log_usage -i /home/db2inst1/ -d sample
+
+-> To calculate the quantity of files used as primary logs:
+
+    ./check_log_usage -i /home/db2inst1/ -d sample -f
+
+## Output
+
+Depending on the given parameters, the output is:
+
+-> Quantity of bytes
+
+    The transaction log utilization is OK.|'Log_qty_used'=0;200000;330000;0;460000
+    The top for the moment has been 0.|'Max_used'=0
+
+![Check_log_usage](https://angoca.github.io/monitor-db2-with-nagios/check_log_usage.png)
+
+-> Quantity of files
+
+    The transaction log utilization is OK.|'Log_files_used'=99;101;150;;230
+    |
+
+## Extra
+
+ * This script is ready to use with Check_MK. Option `-K`. The output is different.
+ * The option `-f` allows to change the behaviour of the calculation.
+
+
 # check_open_files
 
 ## Purpose
