@@ -447,6 +447,38 @@ This generates the following output:
  * This script is ready to use with Check_MK. Option `-K`. The output is different.
 
 
+# check_tablespace_size
+
+## Purpose
+
+Checks the utilities that are currently running in the instance.  Throws a warning if a restore or backup is being performed.
+
+## Requirements
+
+At least SYSMON authority in order to execute `list utilities`.
+
+## Usage
+
+The way to call this script.
+
+    ./check_tablespace_size -i /home/db2inst1/ -d wfscpd --id 2
+
+## Output
+
+This generates the following output:
+
+    OK tablespace size (17% - Auto resize).|Tablespace=5MB
+    Tablespace TS16K has allocated 32 MB and its watermark is at 7|Allocated=32MB
+    Watermark=7MB
+
+![Check_tablespace_size](https://angoca.github.io/monitor-db2-with-nagios/check_tablespace_size.png)
+
+## Extra
+
+ * This script is ready to use with Check_MK. Option `-K`. The output is different.
+ * If you do not use the `--id` option you can indicate the name of the tablespace, however it should be in uppercase (the same case as in the db2 catalog).
+
+
 # check_utilities
 
 ## Purpose
@@ -475,3 +507,4 @@ This generates the following output:
 ## Extra
 
  * This script is ready to use with Check_MK. Option `-K`. The output is different.
+
