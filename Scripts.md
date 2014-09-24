@@ -370,6 +370,35 @@ This generates the following output:
  * This script is ready to use with Check_MK. Option `-K`. The output is different.
 
 
+# check_log_consumption
+
+## Purpose
+
+This script helps to create a graph of how many transaction logs have been used in the day, and it only retrieves performance data by returning always OK if the value could be retrieved. It allows to identify the period of the day when transaction consumes the most of transaction logs.
+
+## Requirements
+
+At least SYSMON authority in order to execute `db2pd`.
+
+## Usage
+
+This is the way to call this script:
+
+    ./check_log_consumption -i /home/db2inst1/ -d sample
+
+## Output
+
+The generated output is:
+
+    Archive logs counted|'Size_archive_logs'=0 
+    |
+
+![Check_log_consumption](https://angoca.github.io/monitor-db2-with-nagios/check_log_consumption.png)
+## Extra
+
+ * This script is ready to use with Check_MK. Option `-K`. The output is different.
+
+
 # check_log_usage
 
 ## Purpose
