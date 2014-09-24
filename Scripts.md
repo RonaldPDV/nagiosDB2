@@ -300,7 +300,7 @@ There are two ways to call this scripts:
 
 ## Requirements
 
-TODO
+At least SYSMON authority to run db2pd.
 
 ## Usage
 
@@ -346,7 +346,7 @@ The execute could take a long time, so it is recommended to configure this scrip
 
 ## Requirements
 
-TODO
+Some privilege to access [sysibmadm.db_history](http://www-01.ibm.com/support/knowledgecenter/SSEPGG_10.5.0/com.ibm.db2.luw.sql.rtn.doc/doc/r0022351.html?lang=en).
 
 ## Usage
 
@@ -455,7 +455,7 @@ Checks the utilities that are currently running in the instance.  Throws a warni
 
 ## Requirements
 
-TODO
+At least SYSMON authority in order to execute `list utilities`.
 
 ## Usage
 
