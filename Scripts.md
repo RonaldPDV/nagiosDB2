@@ -227,7 +227,7 @@ The user used to execute the script should have a special privileges in at least
     db2 grant execute on package NULLID.SQLC2H21 to user nagios
     db2 grant execute on specific function SYSPROC.ADMIN_GET_DBP_MEM_USAGE to user nagios
     db2 grant execute on specific function SYSPROC.ADMIN_GET_DBP_MEM_USAGE_AP to user nagios
-    db2 db2 grant usage on workload SYSDEFAULTUSERWORKLOAD to user nagios
+    db2 grant usage on workload SYSDEFAULTUSERWORKLOAD to user nagios
 
 ## Usage
 
