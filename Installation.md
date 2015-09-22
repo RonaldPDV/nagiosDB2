@@ -4,7 +4,7 @@ This is the procedure to install this set of scripts to monitor DB2.
 
 The requirements are:
 
-* DB2 (These scripts have been tested in b9.7 and v10.5, and many scripts could work in v9.5)
+* DB2 (These scripts have been tested in v9.7 and v10.5, and many scripts could work in v9.5)
 * Nagios (In v3 has been tested)
 * Linux / Unix with **Bash**
 * Optional: Check_MK
