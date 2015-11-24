@@ -484,7 +484,10 @@ Checks the utilities that are currently running in the instance.  Throws a warni
 
 ## Requirements
 
-At least SYSMON authority in order to execute `list utilities`.
+This script needs to access tha table where tablespaces are described.
+
+    db2 grant execute on package SYSIBMADM.TBSP_UTILIZATION to user nagios
+
 
 ## Usage
 
